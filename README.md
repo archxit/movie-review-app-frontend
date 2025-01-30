@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# Full Stack Mini Project
+## Java Spring Boot + React + MongoDB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a full-stack application built using Spring Boot for the backend, React for the frontend, and MongoDB as the database. It serves as a learning project to understand the integration of these technologies.
 
-## Available Scripts
+### Tech Stack
 
-In the project directory, you can run:
+**Backend:**
+- Java 17
+- Spring Boot 3.x
+- Spring Data MongoDB
+- Spring Web
+- Maven for dependency management
 
-### `npm start`
+**Frontend:**
+- React 18
+- Node.js & npm
+- Axios for API calls
+- React Router for navigation
+- Tailwind CSS for styling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Database:**
+- MongoDB
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+Before running this project, make sure you have the following installed:
+- JDK 17 or higher
+- Node.js and npm
+- MongoDB
+- Maven
+- Your favorite IDE (VS Code, IntelliJ IDEA, etc.)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Project Structure
 
-### `npm run build`
+```
+fullstack-project/
+├── backend/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   └── resources/
+│   │   └── test/
+│   └── pom.xml
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── README.md
+└── README.md
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Backend Setup
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
+   ```bash
+   mvn install
+   ```
 
-### `npm run eject`
+3. Run the Spring Boot application:
+   ```bash
+   mvn spring-boot:run
+   ```
+   The server will start on `http://localhost:8080`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Frontend Setup
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Start the React development server:
+   ```bash
+   npm start
+   ```
+   The application will open in your browser at `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Database Setup
+1. Make sure MongoDB is running on your system
+2. The default MongoDB connection URL is: `mongodb://localhost:27017/mydatabase`
+3. You can modify the connection settings in `application.properties`
 
-## Learn More
+### Key Features
+- RESTful API endpoints
+- MongoDB integration
+- React frontend with modern UI
+- Cross-Origin Resource Sharing (CORS) enabled
+- Basic CRUD operations
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### API Endpoints
+- `GET /api/v1/resources` - Get all resources
+- `POST /api/v1/resources` - Create a new resource
+- `GET /api/v1/resources/{id}` - Get a specific resource
+- `PUT /api/v1/resources/{id}` - Update a resource
+- `DELETE /api/v1/resources/{id}` - Delete a resource
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Code Splitting
+### Learning Resources
+- [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [MongoDB Documentation](https://docs.mongodb.com/)
+- [Spring Data MongoDB](https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### License
+This project is licensed under the MIT License - see the LICENSE file for details
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Acknowledgments
+- Thanks to the Spring Boot, React, and MongoDB communities for their excellent documentation
+- This project was created as a learning exercise to understand full-stack development
