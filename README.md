@@ -1,78 +1,52 @@
-# Full Stack Mini Project
-## Java Spring Boot + React + MongoDB
+# React Frontend Application
+## Modern React Frontend with Tailwind CSS
 
-This project is a full-stack application built using Spring Boot for the backend, React for the frontend, and MongoDB as the database. It serves as a learning project to understand the integration of these technologies.
+This repository contains the frontend React application for the full-stack mini project, designed to work with the Spring Boot backend.
 
 ### Tech Stack
 
-**Backend:**
-- Java 17
-- Spring Boot 3.x
-- Spring Data MongoDB
-- Spring Web
-- Maven for dependency management
-
-**Frontend:**
 - React 18
 - Node.js & npm
+- React Router v6
 - Axios for API calls
-- React Router for navigation
-- Tailwind CSS for styling
-
-**Database:**
-- MongoDB
+- Tailwind CSS
+- Jest & React Testing Library
+- ESLint & Prettier
 
 ### Prerequisites
 
-Before running this project, make sure you have the following installed:
-- JDK 17 or higher
-- Node.js and npm
-- MongoDB
-- Maven
-- Your favorite IDE (VS Code, IntelliJ IDEA, etc.)
+- Node.js 16.x or higher
+- npm or yarn
+- Modern web browser
+- VS Code (recommended)
 
 ### Project Structure
 
 ```
-fullstack-project/
-├── backend/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   └── resources/
-│   │   └── test/
-│   └── pom.xml
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── README.md
+react-frontend/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── hooks/
+│   ├── utils/
+│   ├── context/
+│   ├── assets/
+│   ├── App.js
+│   └── index.js
+├── package.json
+├── tailwind.config.js
+├── .env
 └── README.md
 ```
 
 ### Getting Started
 
-#### Backend Setup
-1. Navigate to the backend directory:
+1. Clone the repository:
    ```bash
-   cd backend
-   ```
-
-2. Install dependencies:
-   ```bash
-   mvn install
-   ```
-
-3. Run the Spring Boot application:
-   ```bash
-   mvn spring-boot:run
-   ```
-   The server will start on `http://localhost:8080`
-
-#### Frontend Setup
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
+   git clone https://github.com/yourusername/react-frontend.git
+   cd react-frontend
    ```
 
 2. Install dependencies:
@@ -80,47 +54,113 @@ fullstack-project/
    npm install
    ```
 
-3. Start the React development server:
+3. Create `.env` file:
+   ```
+   REACT_APP_API_URL=http://localhost:8080/api/v1
+   ```
+
+4. Start the development server:
    ```bash
    npm start
    ```
    The application will open in your browser at `http://localhost:3000`
 
-#### Database Setup
-1. Make sure MongoDB is running on your system
-2. The default MongoDB connection URL is: `mongodb://localhost:27017/mydatabase`
-3. You can modify the connection settings in `application.properties`
+### Available Scripts
 
-### Key Features
-- RESTful API endpoints
-- MongoDB integration
-- React frontend with modern UI
-- Cross-Origin Resource Sharing (CORS) enabled
-- Basic CRUD operations
+- `npm start` - Runs the app in development mode
+- `npm test` - Runs the test suite
+- `npm run build` - Builds the app for production
+- `npm run lint` - Runs ESLint
+- `npm run format` - Formats code with Prettier
 
-### API Endpoints
-- `GET /api/v1/movies` - Get all resources
-- `POST /api/v1/movie` - Create a new resource
-- `GET /api/v1/movie/{IMDBid}` - Get a specific resource
-- `POST /api/v1/reviews/{id}` - Update a resource
+### API Integration
 
+The application uses Axios for API calls. API service configuration:
+
+```javascript
+// src/services/api.js
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+export default api;
+```
+
+### Features
+
+- Responsive design with Tailwind CSS
+- React Router for navigation
+- Form handling with validation
+- Error handling and loading states
+- API integration with the Spring Boot backend
+- Protected routes
+- Dark mode support
+
+### Folder Structure Explanation
+
+- `components/` - Reusable UI components
+- `pages/` - Page components/routes
+- `services/` - API calls and other services
+- `hooks/` - Custom React hooks
+- `utils/` - Helper functions and utilities
+- `context/` - React Context providers
+- `assets/` - Images, fonts, and other static files
+
+### State Management
+
+The application uses React Context API for state management. For more complex state requirements, consider using Redux or Zustand.
+
+### Testing
+
+Run tests using:
+```bash
+npm test
+```
+
+Write tests in the `__tests__` directory adjacent to the component being tested.
+
+### Code Style
+
+The project uses ESLint and Prettier for code formatting. Configuration files:
+- `.eslintrc.js`
+- `.prettierrc`
+
+### Building for Production
+
+1. Update the production API URL in `.env.production`
+2. Build the project:
+   ```bash
+   npm run build
+   ```
+3. The `build` folder will contain production-ready files
+
+### Deployment
+
+The application can be deployed to various platforms:
+- Vercel
+- Netlify
+- AWS S3
+- GitHub Pages
+
+### Browser Support
+
+- Chrome (last 2 versions)
+- Firefox (last 2 versions)
+- Safari (last 2 versions)
+- Edge (last 2 versions)
 
 ### Contributing
+
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### Learning Resources
-- [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
-- [React Documentation](https://reactjs.org/docs/getting-started.html)
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Spring Data MongoDB](https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/)
-
 ### License
-This project is not licensed.
-
-### Acknowledgments
-- Thanks to the Spring Boot, React, and MongoDB communities for their excellent documentation
-- This project was created as a learning exercise to understand full-stack development
+This project is licensed under the FREE License.
