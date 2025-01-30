@@ -99,11 +99,11 @@ fullstack-project/
 - Basic CRUD operations
 
 ### API Endpoints
-- `GET /api/v1/resources` - Get all resources
-- `POST /api/v1/resources` - Create a new resource
-- `GET /api/v1/resources/{id}` - Get a specific resource
-- `PUT /api/v1/resources/{id}` - Update a resource
-- `DELETE /api/v1/resources/{id}` - Delete a resource
+- `GET /api/v1/movies` - Get all resources
+- `POST /api/v1/movie` - Create a new resource
+- `GET /api/v1/movie/{IMDBid}` - Get a specific resource
+- `POST /api/v1/reviews/{id}` - Update a resource
+
 
 ### Contributing
 1. Fork the repository
@@ -119,7 +119,7 @@ fullstack-project/
 - [Spring Data MongoDB](https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/)
 
 ### License
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is not licensed.
 
 ### Acknowledgments
 - Thanks to the Spring Boot, React, and MongoDB communities for their excellent documentation
